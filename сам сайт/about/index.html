@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Bit Chemistry Store</title>
+</head>
+<body>
+
+    <header id="header">
+        <h1 onclick="redirectToMainPage()">Home Safe</h1>
+        <nav id="navbar">
+            <a href="#about" onclick="redirectToAboutPage()">О нас</a>
+            <a href="#catalog" onclick="redirectToCatalogPage()">Каталог</a>
+            <a href="#findus" onclick="redirectToHotLinePage()">Где нас найти?</a>
+            <button id="loginBtn">Логин</button>
+            <button id="registerBtn">Регестрация</button>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>О нас</h2>
+        <!-- Add company motto here -->
+        <p>Наступила зима, а вместе с ней возникает необходимость подготовить наши дома к предстоящим холодным месяцам. 
+            В нашем магазине товаров для дома мы понимаем важность сохранения тепла, уюта и безопасности в вашем доме в течение зимнего сезона. 
+            Вот почему мы предлагаем широкий ассортимент высококачественных, экологичных решений для отопления дома, которые идеально подходят для зимнего сезона.</p>
+    </section>
+    <section id="newItemsSlider">
+        <div class="slider-container">
+            <div class="slider-track" id="sliderTrack">
+                <div class="slider-item">
+                    <img src="../gallery/slidedr1.jpg" alt="Product 1">
+                    <p>Средства бытовой химии(Набор)</p>
+                </div>
+                <div class="slider-item">
+                    <img src="../gallery/slidedr2.jpg" alt="Product 2">
+                    <p>Средства бытовой химии(Набор)</p>
+                </div>
+                
+            </div>
+            
+        </div>
+    </section>
+
+    <footer id="footer">
+        &copy; 2024.Все права защещены.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

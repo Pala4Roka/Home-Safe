@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Bit Chemistry Store</title>
+</head>
+<body>
+
+    <header id="header">
+        <h1 onclick="redirectToMainPage()">Home Safe</h1>
+        <nav id="navbar">
+            <a href="#about" onclick="redirectToAboutPage()">О нас</a>
+            <a href="#catalog" onclick="redirectToCatalogPage()">Каталог</a>
+            <a href="#findus" onclick="redirectToHotLinePage()">Где нас найти?</a>
+            <button id="loginBtn" onclick="openLoginForm()">Логин</button>
+            <button id="registerBtn" onclick="openRegistrationForm()">Регестрация</button>
+        </nav>
+    </header>
+    <div id="overlay" class="overlay" onclick="closeForms()"></div>
+    <div id="registrationForm" class="form">
+        <h2>Регестрация</h2>
+        <form id="registrationFormContent" onsubmit="submitRegistrationForm(event)">
+            <label for="firstName">Имя:</label>
+            <input type="text" id="firstName" required pattern="[A-Za-zА-Яа-яЁё]+" title="Only letters allowed">
+    
+            <label for="lastName">Фамилия:</label>
+            <input type="text" id="lastName" required pattern="[A-Za-zА-Яа-яЁё]+" title="Only letters allowed">
+    
+            <label for="middleName">Оттечество:</label>
+            <input type="text" id="middleName" pattern="[A-Za-zА-Яа-яЁё]+" title="Only letters allowed">
+    
+            <label for="login">Login:</label>
+            <input type="text" id="login" required pattern="[A-Za-z0-9-]+" title="Only letters, numbers, and hyphens allowed">
+    
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+    
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" minlength="6" required>
+    
+            <label for="confirmPassword">Поттверждение пароля:</label>
+            <input type="password" id="confirmPassword" minlength="6" required>
+    
+            <input type="checkbox" id="agreeCheckbox" required>
+            <label for="agreeCheckbox">
+                Я соглашаюсь с 
+                <a href="javascript:void(0);" onclick="openRulesWindow()">правилами</a>.
+            </label>
+    
+            <button type="submit">Зарегестрироваться</button>
+        </form>
+    </div>
+    
+    <div id="loginForm" class="form">
+        <h2>Логин</h2>
+        <form id="loginFormContent" onsubmit="submitLoginForm(event)">
+            <label for="loginUsername">Login:</label>
+            <input type="text" id="login" required>
+    
+            <label for="loginPassword">Пароль:</label>
+            <input type="password" id="loginPassword" required>
+    
+            <button type="submit">Войти</button>
+        </form>
+    </div>
+    <div id="rulesWindow" class="window">
+        <div class="window-content">
+            <h2>Политика конфиденциальности</h2>
+        <p>В Home Safe мы серьезно относимся к вашей конфиденциальности и обязуемся защищать вашу личную информацию. Эта политика конфиденциальности объясняет, как мы собираем, используем и передаем личную информацию, которую мы получаем от вас, когда вы пользуетесь нашим веб-сайтом, мобильным приложением или другими услугами (совместно именуемыми "Услуги"). Используя Сервисы, вы даете согласие на сбор, использование и передачу вашей личной информации, как описано в настоящей политике.</p>
+
+        <h3>Информация, которую мы собираем</h3>
+        <p>Когда вы пользуетесь Сервисами, мы можем собирать следующие типы информации:</p>
+
+        <ul>
+            <li><strong>Личная информация:</strong> Это может включать ваше имя, адрес электронной почты, почтовый адрес и номер телефона. Мы собираем эту информацию, когда вы создаете учетную запись, совершаете покупку или подписываетесь на нашу рассылку новостей.</li>
+            <li><strong>Информация об использовании:</strong> Мы собираем информацию о том, как вы пользуетесь Сервисами, включая активность при просмотре веб-страниц и нажатиях, тип устройства и IP-адрес.</li>
+            <li><strong>Информация об устройстве:</strong> Мы собираем информацию об устройстве, которое вы используете для доступа к Сервисам.</li>
+        </ul>
+            <button onclick="closeRulesWindow()">Закрыть</button>
+        </div>
+    </div>
+    <section id="about">
+        <h2>О нас</h2>
+        <!-- Add company motto here -->
+        <p>Наступила зима, а вместе с ней возникает необходимость подготовить наши дома к предстоящим холодным месяцам. 
+            В нашем магазине товаров для дома мы понимаем важность сохранения тепла, уюта и безопасности в вашем доме в течение зимнего сезона. 
+            Вот почему мы предлагаем широкий ассортимент высококачественных, экологичных решений для отопления дома, которые идеально подходят для зимнего сезона.</p>
+    </section>
+    <section id="newItemsSlider">
+        <div class="slider-container">
+            <div class="slider-track" id="sliderTrack">
+                <div class="slider-item">
+                    <img src="../gallery/slidedr1.jpg" alt="Product 1">
+                    <p>Средства бытовой химии(Набор)</p>
+                </div>
+                <div class="slider-item">
+                    <img src="../gallery/slidedr2.jpg" alt="Product 2">
+                    <p>Средства бытовой химии(Набор)</p>
+                </div>
+                
+            </div>
+            
+        </div>
+    </section>
+    <section id="catalog">
+        <h2>Каталог</h2>
+        <div id="sortingOptions">
+            <label for="sortBy">Сортировать по :</label>
+            <select id="sortBy" onchange="sortProducts()">
+                <option value="new">Новизне</option>
+                <option value="name">Имени</option>
+                <option value="price">Цене</option>
+                <option value="year">Год производства</option>
+            </select>
+
+            <label for="filterCategory">Фильтр по катигориям:</label>
+            <select id="filterCategory" onchange="filterProducts()">
+                <option value="all">Все категориии</option>
+                <option value="category1">Категория 1</option>
+                <option value="category2">Категория 2</option>
+                <!-- Add more categories as needed -->
+            </select>
+        </div>
+
+        <div id="productList">
+            <!-- Product cards will be dynamically added here using JavaScript -->
+        </div>
+    </section>
+    <section id="cart" class="hidden">
+        <h2>Корзина</h2>
+        <div id="cartItems">
+            <!-- Cart items will be dynamically added here using JavaScript -->
+        </div>
+    </section>
+    <button id="backToTopBtn" onclick="scrollToTop()">Back to Top</button>
+    <footer id="footer">
+        &copy; 2024.Все права защещены.
+    </footer>
+
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<ваш API-ключ>" type="text/javascript"></script>
+    <script src="https://yandex.st/jquery/2.2.3/jquery.min.js" type="text/javascript"></script>
+    <script src="geolocated_map.js" type="text/javascript"></script>
+    <script src="script.js"></script>
+</body>
+</html>

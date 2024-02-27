@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Bit Chemistry Store</title>
+</head>
+<body>
+
+    <header id="header">
+        <h1 onclick="redirectToMainPage()">Home Safe</h1>
+        <nav id="navbar">
+            <a href="#about" onclick="redirectToAboutPage()">О нас</a>
+            <a href="#catalog" onclick="redirectToCatalogPage()">Каталог</a>
+            <a href="#findus" onclick="redirectToHotLinePage()">Где нас найти?</a>
+            <button id="loginBtn">Логин</button>
+            <button id="registerBtn">Регестрация</button>
+        </nav>
+    </header>
+
+    <section id="findus">
+        <h2>Где нас найти?</h2>
+        <div id="map"></div>
+        <div id="contactInfo">
+            <p><strong>Адресс:</strong> 123 Главная Улица, Пушка</p>
+            <p><strong>Телефон:</strong> +1 (555) 123-4567</p>
+            <p><strong>Почта:</strong> info@bitchemistry.com</p>
+        </div>
+    </section>
+
+    <footer id="footer">
+        &copy; 2024.Все права защещены.
+    </footer>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<ваш API-ключ>" type="text/javascript"></script>
+    <script src="https://yandex.st/jquery/2.2.3/jquery.min.js" type="text/javascript"></script>
+    <script src="geolocated_map.js" type="text/javascript"></script>
+    <script src="script.js"></script>
+</body>
+</html>

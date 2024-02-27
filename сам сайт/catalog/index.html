@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Bit Chemistry Store</title>
+</head>
+<body>
+
+    <header id="header">
+        <h1 onclick="redirectToMainPage()">Home Safe</h1>
+        <nav id="navbar">
+            <a href="#about" onclick="redirectToAboutPage()">О нас</a>
+            <a href="#catalog" onclick="redirectToCatalogPage()">Каталог</a>
+            <a href="#findus" onclick="redirectToHotLinePage()">Где нас найти?</a>
+            <button id="loginBtn">Логин</button>
+            <button id="registerBtn">Регестрация</button>
+        </nav>
+    </header>
+    <section id="catalog">
+        <h2>Каталог</h2>
+        <div id="sortingOptions">
+            <label for="sortBy">Сортировать по :</label>
+            <select id="sortBy" onchange="sortProducts()">
+                <option value="new">Новизне</option>
+                <option value="name">Имени</option>
+                <option value="price">Цене</option>
+                <option value="year">Год производства</option>
+            </select>
+
+            <label for="filterCategory">Фильтр по катигориям:</label>
+            <select id="filterCategory" onchange="filterProducts()">
+                <option value="all">Все категориии</option>
+                <option value="category1">Категория 1</option>
+                <option value="category2">Категория 2</option>
+                <!-- Add more categories as needed -->
+            </select>
+        </div>
+
+        <div id="productList">
+            <!-- Product cards will be dynamically added here using JavaScript -->
+        </div>
+    </section>
+    <section id="cart" class="hidden">
+        <h2>Корзина</h2>
+        <div id="cartItems">
+            <!-- Cart items will be dynamically added here using JavaScript -->
+        </div>
+    </section>
+    <footer id="footer">
+        &copy; 2024.Все права защещены.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
